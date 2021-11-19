@@ -1,0 +1,18 @@
+<form action="upload.php" method="post" name="form" enctype="multipart/form-data">
+<!--每个文件上传框限制上传文件的大小为10K字节-->
+<input type="hidden" name="MAX_FILE_SIZE" value="10240">
+<div id="upload"></div>
+<input type="button" value="添加附件" onclick="createUploader()"><br>
+<input type="submit" value="上传">
+</form>
+<script>
+function createUploader(){
+	var div= document.getElementById("upload");;
+	var uploader = document.createElement("input");
+	uploader.type = "file";
+	uploader.name = "myFile[]";
+	div.appendChild(uploader);
+	var br = document.createElement("br");
+	div.appendChild(br);
+}
+</script>
